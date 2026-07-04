@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "Tasks CRUD API",
+    "description": "A simple CRUD REST API for managing tasks, built with Node.js and Express.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get All Tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/tasks",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "tasks"]
+        }
+      }
+    },
+    {
+      "name": "Get Task by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/tasks/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "tasks", "1"]
+        }
+      }
+    },
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"New task\",\n  \"completed\": false\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/tasks",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "tasks"]
+        }
+      }
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"completed\": true\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/tasks/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "tasks", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Task",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/tasks/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "tasks", "1"]
+        }
+      }
+    }
+  ]
+}
